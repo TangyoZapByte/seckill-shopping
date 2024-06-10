@@ -1,0 +1,43 @@
+spring:
+  thymeleaf:
+    cache: false
+
+#数据源配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/seckill?useUnicode=true&characterEncoding=UTF-8&serverTime
+    username: root
+    password: 1234
+    hikari:
+      pool-name: DateHikari
+      idle-timeout: 180000
+      #最大连接数
+      maximum-pool-size: 10
+      auto-commit: true
+      #连接最大存活时间
+      max-lifetime: 180000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+  redis:
+    port: 6379
+    host: 8.148.21.133
+    database: 0
+    timeout: 10000ms
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: 10000ms
+        max-idle: 200
+        min-idle: 5
+    password: 123321
+
+mybatis-plus:
+  check-config-location: false
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  type-aliases-package: com.tyz.pojo
+logging:
+  level:
+    com.tyz.mapper: debug
+
+server:
+  port: 8080

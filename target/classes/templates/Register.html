@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+        >
+<head>
+    <meta charset="UTF-8">
+    <title>注册表单</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="tel"],
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>用户注册</h2>
+    <form action="register.php" method="post">
+        <input type="tel" name="id" placeholder="手机号码" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        <input type="text" name="nickname" placeholder="用户名" required>
+        <input type="password" name="password" placeholder="密码" required>
+        <button type="submit">注册</button>
+    </form>
+</div>
+</body>
+</html>
